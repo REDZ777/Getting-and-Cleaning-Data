@@ -37,12 +37,12 @@ y_train <- read.table("UCI HAR Dataset/train/y_train.txt", col.names = "both")
 x_merge <- rbind(x_train, x_test)
 y_merge <- rbind(y_train, y_test)
 Subject <- rbind(subject_train, subject_test)
-Merged_Data <- cbind(Subject, y_merge, x_merge)
+merged_data <- cbind(Subject, y_merge, x_merge)
 
 
 
 #2: Extracts only the measurements on the mean and standard deviation for each measurement
-tidy_data <- Merged_Data %>% select(subject, both, contains("mean"), contains("std"))
+tidy_data <- merged_data %>% select(subject, both, contains("mean"), contains("std"))
 
 
 #3: Uses descriptive activity names to name the activities in the data set
